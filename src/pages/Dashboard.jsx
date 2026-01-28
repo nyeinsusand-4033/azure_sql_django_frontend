@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { LayoutDashboard, Store, ShoppingBag, Users, ShoppingCart, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/Card';
 import { Link } from 'react-router-dom';
@@ -89,7 +89,7 @@ const Dashboard = () => {
                                 recentOrders.map((order) => (
                                     <div key={order.id} className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
                                         <div className={`w-2 h-2 rounded-full ${order.status === 'COMPLETED' ? 'bg-green-500' :
-                                                order.status === 'PENDING' ? 'bg-yellow-500' : 'bg-slate-500'
+                                            order.status === 'PENDING' ? 'bg-yellow-500' : 'bg-slate-500'
                                             }`} />
                                         <div className="flex-1">
                                             <p className="text-sm text-white">Order #{order.id} - {order.status}</p>
